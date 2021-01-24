@@ -86,7 +86,12 @@ enum class PipelineStage: UnsignedInt {
      */
     GeometryShader = VK_PIPELINE_STAGE_GEOMETRY_SHADER_BIT,
 
-    /** Execution of a fragment shader */
+    /**
+     * Execution of a fragment shader. Does not include color or depth/stencil
+     * attachment writes, those are a separate
+     * @ref PipelineStage::ColorAttachmentOutput and
+     * @ref PipelineStage::DepthStencilAttachmentWrite stages.
+     */
     FragmentShader = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT,
 
     /**
